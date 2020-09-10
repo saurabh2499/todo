@@ -1,0 +1,25 @@
+<%= form_with scope: :task, url: tasks_path, local: true do |form| %>
+  <p>
+    <%= form.label :title %><br>
+    <%= form.text_field :title %>
+  </p>
+ 
+  <p>
+    <%= form.label :text %><br>
+    <%= form.text_area :text %>
+  </p>
+ 
+  <p>
+    <%= form.label :priority %><br>
+    <%= form.number_field :priority %>
+  </p>
+ 
+  <p>
+    <%= form.label :duedate %><br>
+    <%= form.date_field :duedate %>
+  </p>
+ 
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>
