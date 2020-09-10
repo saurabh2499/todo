@@ -10,3 +10,9 @@ class CreateTasks < ActiveRecord::Migration[6.0]
     end
   end
 end
+
+class SetDefault < ActiveRecord::Migration
+  def change
+    change_column :tasks, :priority, :number_field, default: "1"
+  end
+end

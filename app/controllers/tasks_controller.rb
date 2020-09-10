@@ -19,10 +19,10 @@ class TasksController < ApplicationController
 	end
 
 	def update
-  		@article = Article.find(params[:id])
+  		@task = Task.find(params[:id])
  
-	    if @article.update(article_params)
-    		redirect_to @article
+	    if @task.update(task_params)
+    		redirect_to @task
   		else
     		render 'edit'
   		end
@@ -37,6 +37,12 @@ class TasksController < ApplicationController
 	end
 
 
+	def destroy
+	  @task = Task.find(params[:id])
+	  @task.destroy
+	 
+	  redirect_to tasks_path
+	end
 	private
   		def task_params
     		params.require(:task).permit(:title, :text, :priority, :duedate)

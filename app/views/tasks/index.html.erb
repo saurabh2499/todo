@@ -8,7 +8,7 @@
     <th>Text</th>
     <th>Priority</th>
     <th>Duedate</th>
-    <th colspan="2"></th>
+    <th colspan="3"></th>
   </tr>
  
   <% @tasks.each do |task| %>
@@ -19,6 +19,9 @@
       <td><%= task.duedate %></td>
       <td><%= link_to 'Show', task_path(task) %></td>
       <td><%= link_to 'Edit', edit_task_path(task) %></td>
+      <td><%= link_to 'Delete', task_path(task),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %></td>
     </tr>
   <% end %>
 </table>
